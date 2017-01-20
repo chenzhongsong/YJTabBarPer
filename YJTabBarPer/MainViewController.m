@@ -27,7 +27,10 @@
 
 - (void)btnAction{
     if (self.navigationController) {
+//        [self.tabBarController.tabBar setHidden:YES];// = YES;
+        self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:[ViewController new] animated:NO];
+        self.hidesBottomBarWhenPushed = NO;
     } else {
         [self dismissViewControllerAnimated:YES completion:nil];
     }

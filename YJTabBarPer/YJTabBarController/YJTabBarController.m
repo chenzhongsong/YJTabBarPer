@@ -17,6 +17,8 @@
 
 @property (nonatomic, strong) NSMutableArray *items;
 
+@property (nonatomic, weak) YJTabBar *yjTabBar;
+
 @end
 
 @implementation YJTabBarController
@@ -46,6 +48,7 @@
     tabBar.delegate = self;
     tabBar.items = self.items;
     [self.view addSubview:tabBar];//addSubview时触发了YJTabBar的layoutOutSubviews
+    self.yjTabBar = tabBar;
     // 移除系统的tabBar
     [self.tabBar removeFromSuperview];
 }
